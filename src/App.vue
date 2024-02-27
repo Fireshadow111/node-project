@@ -1,7 +1,6 @@
 <template>
   <NavBar></NavBar>
-  <main class="container-fluid
-   vh-100">
+  <main class="container-fluid">
      <router-view/>
   </main>
   <Footer></Footer>

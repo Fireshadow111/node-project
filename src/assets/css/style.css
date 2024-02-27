@@ -24,7 +24,11 @@ nav ul li {
 
 nav .nav-link{
     color:var(--alternative);
-    font-weight: 700;
+    
+}
+
+nav{
+    background-color: var(--primary);
 }
 
 .active, nav .nav-link:hover{
@@ -43,10 +47,17 @@ img[alt='logo']{
   
 }
 
-
+/* body */
 #body{
     background-color:var(--primary);
     font-family: "Old Standard TT", serif;
+    color: var(--alternative);
   }
 
 /* App */
+
+
+/* Footer */
+Footer{
+    margin-top: 15rem;
+}

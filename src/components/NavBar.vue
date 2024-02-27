@@ -1,6 +1,6 @@
 <template>
-    <nav class="navbar navbar-expand-lg sticky-top ">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid text-center">
             <router-link to="/">
                 <img class="img-fluid" src="https://i.ibb.co/gSP0hng/NEXT-removebg-preview-1.png" alt="logo" loading="lazy">
             </router-link>
@@ -9,7 +9,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-uppercase ">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-uppercase fw-bolder ">
                     <li class="nav-item">
                         <router-link class="nav-link " to="/"> Home</router-link>
                     </li>
