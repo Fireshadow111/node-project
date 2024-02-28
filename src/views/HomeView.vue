@@ -8,7 +8,7 @@
     <div class="col-6">
      <img src="https://i.ibb.co/SrX2m0B/Frame-5.png" alt="world icon" loading="lazy" class="img-fluid mt-5">
     </div>
-    <button type="button" class=" btn mt-3 "><a href="/src/views/ProductsView.vue" class="text-light fs-6 text-decoration-none">View courses/services</a></button>
+    <button type="button" class=" btn mt-3 "><a href="/products" class="text-light fs-6 text-decoration-none">View courses/services</a></button>
   </div>
   </div>
 </template>
