@@ -1,6 +1,6 @@
 <template>
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container-fluid text-center">
+    <nav class="navbar navbar-expand-lg sticky-top p-0">
+        <div class="container-fluid text-center p-0">
             <router-link to="/">
                 <img class="img-fluid" src="https://i.ibb.co/gSP0hng/NEXT-removebg-preview-1.png" alt="logo" loading="lazy">
             </router-link>

@@ -30,6 +30,11 @@ const routes = [
     name:'contact',
     component:()=> import('@/views/ContactView.vue')
   },
+  // {
+  //   path:'/productview',
+  //   name:'productvie',
+  //   component:()=> import('@/views/ProductView.vue')
+  // },
 ]
 
 const router = createRouter({
