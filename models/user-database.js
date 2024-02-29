@@ -10,7 +10,7 @@ const getUsers= async()=>{
     const[result] = await pool.query(`
     SELECT * 
     FROM users
-    WHERE users_ID = ?`,[id])
+    WHERE user_ID = ?`,[id])
     return result
   }
   
@@ -43,13 +43,13 @@ const getUsers= async()=>{
   const newUser = async(first_Name, last_Name, user_Age, gender, user_Role, email_Add, user_Pass, user_Profile)=> {
     await pool.query(`
     INSERT INTO users (first_Name, last_Name, user_Age, gender, user_Role, email_Add, user_Pass, user_Profile)
-    VALUES (?,?);
+    VALUES (?,?,?,?,?,?,?,?,?);
     `, [first_Name, last_Name, user_Age, gender, user_Role, email_Add, user_Pass, user_Profile])
 }
 
   const checkUser = async(first_Name)=> {
     const [[{password}]] = await pool.query(`
-    SELECT user_Pass FROM user WHERE first_Name = ?
+    SELECT user_Pass FROM users WHERE first_Name = ?
     `, [first_Name])
     return password
 }

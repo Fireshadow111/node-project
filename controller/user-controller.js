@@ -11,25 +11,12 @@ export default{
       res.send(await getUser(+req.params.id))
   },
   
-
-
   addUse: async(req,res)=>{
-    const { first_Name, last_Name, user_Age, gender, user_Role, email_Add, user_Pass, user_Profile } = req.body;
-    await addUser(first_Name, last_Name, user_Age, gender, user_Role, email_Add, user_Pass, user_Profile);
-    res.send(await getUsers())
-},
-  // hash password
-// signUpUser:('/user',(req,res)=>{
-//     const {first_Name, last_Name, user_Age, gender, user_Role, email_Add, user_Pass, user_Profile} = req.body
-//     bcrypt.hash(user_Pass, 10, async(err, hash)=> {
-//         if(err) throw err
-//         await newUser(first_Name, last_Name, user_Age, gender, user_Role, email_Add, hash, user_Profile)
-//         res.send({
-//             msg: "You have created an account"
-//         })
-//     })
-// }),
-
+      const { first_Name, last_Name, user_Age, gender, user_Role, email_Add, user_Pass, user_Profile } = req.body;
+      await addUser(first_Name, last_Name, user_Age, gender, user_Role, email_Add, user_Pass, user_Profile);
+      res.send(await getUsers())
+  },
+  
   deleteUser: async(req,res)=>{
       res.send(await deleteUser(req.params.id));   
   },
@@ -60,7 +47,17 @@ export default{
       res.json(await getUsers())
   },
 
- 
+  // hash password
+// signUpUser:('/users',(req,res)=>{
+//     const {first_Name, last_Name, user_Age, gender, user_Role, email_Add, user_Pass, user_Profile} = req.body
+//     bcrypt.hash(user_Pass, 10, async(err, hash)=> {
+//         if(err) throw err
+//         await newUser(first_Name, last_Name, user_Age, gender, user_Role, email_Add, hash, user_Profile)
+//         res.send({
+//             msg: "You have created an account"
+//         })
+//     })
+// })
   
   
   
