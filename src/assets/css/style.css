@@ -59,7 +59,12 @@ img[alt='logo']{
 
 /* Footer */
 Footer{
-    margin-top: 15rem;
+    margin-top: 5rem;
+
+}
+
+Footer div{
+    background-color: #3A8541;
 }
 
 
