@@ -1,34 +1,55 @@
 /* eslint-disable */
 <template>
-    <div>
-        
-      <input type="text" placeholder="prod_Name" v-model="prod_Name" required>
-      <input type="number" placeholder="quantity" v-model="quantity" required>
-      <input type="number"  placeholder="amount" v-model="amount" required>
-      <input type="text" placeholder="category" v-model="category" required>
-      <input type="text" placeholder="prod_URL" v-model="prod_URL" required>
-      <button @click="addProduct()">Add Button</button>
-  
-      <h1></h1>
+      <div>
+       <!-- Button trigger modal -->
+       
+  <button type="button" class="btn btn-primary mt-5" id="add" data-bs-toggle="modal" data-bs-target="#addNewProduct">
+    Add Product
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="addNewProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" placeholder="prod_Name" class="form-control my-2" v-model="prod_Name" required>
+          <input type="number" placeholder="quantity" class="form-control my-2" v-model="quantity" required>
+          <input type="number"  placeholder="amount" class="form-control my-2" v-model="amount" required>
+          <input type="text" placeholder="category" class="form-control my-2" v-model="category" required>
+          <input type="text" placeholder="prod_URL" class="form-control my-2" v-model="prod_URL" required>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          <a @click="addProduct()" class="btn btn-success">Add</a>
+        </div>
+      </div>
+    </div>
+  </div>
   
       <table class="table">
         <tr class="thead">
           <th>id</th>
           <th>prod_name</th>
-          <th>quantity</th>
+          <!-- <th>quantity</th> -->
           <th>amount</th>
           <th>category</th>
           <th>ProdURL</th>
+          <th>Action</th>
         </tr>
-        <tbody v-for="item in products" :key="item.id" >
+        <tbody v-for="item in products" :key="item.id" class="mt-3">
           <td>{{item.prod_ID}}</td>
           <td>{{item.prod_Name}}</td>
-          <td>{{item.quantity}}</td>
+          <!-- <td>{{item.quantity}}</td> -->
           <td>{{item.amount}}</td>
           <td>{{item.category}}</td>
           <td><img :src="item.prod_URL"></td>
-          <button @click="editProd(item.prod_ID)">Edit</button>
-          <button @click="deleteProd(item.prod_ID)">Delete</button>
+          <td><a @click="editProd(item.prod_ID)" id="edit" class="btn btn-outline-success">Edit</a>
+          <a @click="deleteProd(item.prod_ID)" id="delete" class="btn btn-outline-danger">Delete</a></td>
+          
         </tbody>
       </table>
       
@@ -84,32 +105,35 @@
   </script>
   <style>
   .table {
-    width: 100%;
+    width: 96%;
     border-collapse: collapse;
     margin-top: 20px;
+    align-content: center;
+    margin: 2.3rem;
+    
   }
   
   .table th, .table td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 1px;
     text-align: left;
   }
   
   .thead {
-    background-color: #3498db;
+    background-color:inherit;
     color: white;
   }
   
   .table img {
-    max-width: 50px;
+    max-width:400px;
     max-height: 50px;
     border-radius: 5px;
+    background-color: inherit;
   }
   
-  .table button {
-    background-color: #4caf50;
+  #edit, #delete {
     color: white;
-    border: none;
+   background-color: inherit;
     padding: 5px 10px;
     text-align: center;
     text-decoration: none;
@@ -118,11 +142,19 @@
     margin: 2px;
     cursor: pointer;
     border-radius: 3px;
+    margin-top: 10px;
   }
   
-  .table button:hover {
-    background-color: #45a049;
+  .table #edit:hover {
+    background-color: #39983d;
+  }
+  .table #delete:hover {
+    background-color: #dc5957;
   }
   
+  #add{
+    margin-left: 2.5rem;
+    display: grid;
+  }
     
   </style>
