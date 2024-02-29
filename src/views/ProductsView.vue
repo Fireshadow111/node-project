@@ -1,7 +1,6 @@
 <template>
-  <div class="container-fluid vh-100">
-    <!-- <img src="https://i.ibb.co/Qv7k393/cdfda49dd7071ec1623e87f55943ab3e.gif" alt="Code-Image" loading="lazy" class="img-fluid"> -->
-    <h1 class="center display-1 text-center fst-italic fw-bold">
+  <div class="container-fluid">
+    <h1 class="display-2 text-center fst-italic fw-bold">
       The Products we offer
     </h1>
   </div>
@@ -164,18 +163,17 @@ export default {};
 </script>
 
 <style scoped>
-div.container-fluid {
+/* div.container-fluid {
   background-image: url("https://i.ibb.co/Qv7k393/cdfda49dd7071ec1623e87f55943ab3e.gif");
   background-size: cover;
-  /* margin-bottom: 10px; */
-}
+} */
 
-.center {
+/* .center {
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
+} */
 
 .card {
   background: inherit;
@@ -188,10 +186,9 @@ div.container-fluid {
 p {
   text-align: justify;
 }
-
-.vh-100 {
+/* .vh-100 {
   height: 50vh !important;
-}
+} */
 
 .btn {
   border-color: #3a8541;
