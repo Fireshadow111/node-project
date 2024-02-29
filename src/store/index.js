@@ -7,14 +7,18 @@ export default createStore({
   state: {
     products: null,
     users: null,
-    loggedIn: false
+    loggedIn: false,
+    product:null
   },
   getters: {},
   mutations: {
     setProducts(state, data) {
       state.products = data;
     },
-
+    setProduct(state, data) {
+      state.product = data;
+    },
+    
     setUser(state, data) {
       state.users = data;
     },
@@ -33,8 +37,9 @@ export default createStore({
       }
     },
 
-    async getProduct({commit}){
-      await axios.get(baseUrl+'/products')
+    async getProduct({commit},prod_ID){
+      const {data} = await axios.get(baseUrl+'/products/'+prod_ID)
+      commit("setProduct", data);
     },
 
     async addProduct({commit},add) {

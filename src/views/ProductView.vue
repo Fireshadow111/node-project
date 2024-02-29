@@ -1,6 +1,6 @@
 <template>
     <section class="container mt-5">
-      <div class="card ml-0 mt-5"  v-for="item in product" :key="item">
+      <div class="card ml-0 mt-5"  v-for="item in product" :key="item.prod_ID">
         <div class="card-body">
           <div class="row justify-content-center align-items-center text-center">
             <div class="col-md-6"><img :src="item.prod_URL" class="img-fluid">
@@ -43,7 +43,8 @@
           return this.$store.state.product
         },
         getProduct(){
-          return this.$store.dispatch('getProduct')
+            console.log(this.$route.params.id);
+          return this.$store.dispatch('getProduct', this.$route.params.id)
         },
     
         
