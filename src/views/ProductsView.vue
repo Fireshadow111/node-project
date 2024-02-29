@@ -1,155 +1,28 @@
 <template>
-  <div class="container-fluid">
-    <h1 class="display-2 text-center fst-italic fw-bold">
-      The Products we offer
+  <div class="container-fluid mt-5">
+    <h1 class="display-3 text-center fst-italic fw-bold">
+      The courses we offer:
     </h1>
   </div>
   <section class="container mt-5">
-    <div class="card">
+    <div class="card ml-0 mt-5"  v-for="item in products" :key="item">
       <div class="card-body">
         <div class="row justify-content-center align-items-center text-center">
-          <div class="col-md-6">
-            <h1>WEB DEVELOPMENT</h1>
-            <p class="card-text">
-              Web development can range from developing a simple single static
-              page of plain text to complex web applications, electronic
-              businesses, and social network services.
-            </p>
-            <a href="#" class="btn">View Product</a>
-          </div>
-          <div class="col-md-6">
-            <img
-              src="https://i.ibb.co/K7dcPpD/Rectangle-3.png"
-              alt="Code-Image"
-              loading="lazy"
-              class="img-fluid"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="container mt-5">
-    <div class="card ml-0">
-      <div class="card-body">
-        <div class="row justify-content-center align-items-center text-center">
-          <div class="col-md-6">
-            <img
-              src="https://i.ibb.co/QfQ6YG5/Rectangle-2.png"
-              alt="Code-Image"
-              loading="lazy"
-              class="img-fluid"
-            />
-          </div>
-          <div class="col-md-6">
-            <h1 class="text-uppercase card-title">Cyber Security</h1>
-            <p class="card-text">
-              Cybersecurity is the practice of protecting internet-connected
-              systems such as hardware, software and data from cyberthreats.
-            </p>
-            <a href="#" class="btn">View Product</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="container mt-5">
-    <div class="card">
-      <div class="card-body">
-        <div class="row justify-content-center align-items-center text-center">
-          <div class="col-md-6">
-            <h1 class="text-uppercase card-title">Data Science</h1>
-            <p class="card-text">
-              Data science is an interdisciplinary academic field that uses
-              statistics, scientific computing, scientific methods.
-            </p>
-            <a href="#" class="btn">View Product</a>
-          </div>
-          <div class="col-md-6">
-            <img
-              src="https://i.ibb.co/DDZrtFD/7797fca87154f8d93a02e3506d6fb9ee-removebg-preview.png"
-              alt="Code-Image"
-              loading="lazy"
-              class="img-fluid"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="container mt-5">
-    <div class="card ml-0">
-      <div class="card-body">
-        <div class="row justify-content-center align-items-center text-center">
-          <div class="col-md-6">
-            <img
-              src="https://i.ibb.co/vsp6Jhn/game-development-removebg-preview.png"
-              alt="Code-Image"
-              loading="lazy"
-              class="img-fluid"
-            />
-          </div>
-          <div class="col-md-6">
-            <h1 class="text-uppercase card-title">Game Development</h1>
-            <p class="card-text">
-              The game development process typically requires input from one or
-              more game designers, artists, programmers, animators, testers,
-              project managers, etc.
-            </p>
-            <a href="#" class="btn">View Product</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="container mt-5">
-    <div class="card">
-      <div class="card-body">
-        <div class="row justify-content-center align-items-center text-center">
-          <div class="col-md-6">
-            <h1 class="text-uppercase card-title">App Development</h1>
-            <p class="card-text">
-              App development uses programming languages and development skills
-              to create, test, and develop applications on mobile devices.
-            </p>
-            <a href="#" class="btn">View Product</a>
-          </div>
-          <div class="col-md-6">
-            <img
-              src="https://i.ibb.co/C5XX2zw/the-complete-guide-to-mobile-app-development-2021-ded2abd1b1-removebg-preview.png"
-              alt="Code-Image"
-              loading="lazy"
-              class="img-fluid"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="container mt-5">
-    <div class="card ml-0">
-      <div class="card-body">
-        <div class="row justify-content-center align-items-center text-center">
-          <div class="col-md-6">
-            <img
+          <div class="col-md-6"><img :src="item.prod_URL" class="img-fluid">
+            <!-- <img
               src="https://i.ibb.co/QNW9Hj1/634970c7cbeed5644711b937-62fd57ccd6890f25796f92f9-Adobe-Stock-295461823-removebg-preview.png"
               alt="Code-Image"
               loading="lazy"
               class="img-fluid"
-            />
+            /> -->
           </div>
           <div class="col-md-6">
-            <h1 class="text-uppercase card-title card-title">
-              Software Development
-            </h1>
-            <p class="card-text">
-              Software development is the process of designing, creating,
-              testing, and maintaining different software applications.
-            </p>
+            <h2 class="text-uppercase card-title card-title">
+             {{ item.prod_Name }}
+            </h2>
+            <h4 class="card-text">
+            {{ item.category}}
+            </h4>
             <a href="#" class="btn">View Product</a>
           </div>
         </div>
@@ -159,8 +32,33 @@
 </template>
 
 <script>
-export default {};
-</script>
+  export default {
+    data(){
+      return{
+        prod_Name: null,
+        quantity:null,
+        amount:null,
+        category:null,
+        prod_URL:null
+      }
+    },
+  
+    computed: {
+      products(){
+        return this.$store.state.products
+      },
+      getProducts(){
+        return this.$store.dispatch('getProducts')
+      },
+  
+      
+    },
+    mounted(){
+      this.getProducts
+    },
+    
+  }
+  </script>
 
 <style scoped>
 /* div.container-fluid {
@@ -183,6 +81,12 @@ export default {};
   width: 75%;
 }
 
+.container{
+  display: grid;
+    align-content: center;
+    justify-items: center;
+}
+
 p {
   text-align: justify;
 }
@@ -195,7 +99,7 @@ p {
   color: #ffff;
 }
 
-.ml-0 {
+/* .ml-0 {
   left: 29%;
-}
+} */
 </style>
