@@ -42,7 +42,7 @@ export default{
   
       user_Profile ? user_Profile = user_Profile : {user_Profile} = user
   
-      await editUser(first_Name, last_Name, user_Age, gender, user_Role, email_Add, user_Pass, user_Profile +req.params.id)
+      await editUser(first_Name, last_Name, user_Age, gender, user_Role, email_Add, user_Pass, user_Profile, +req.params.id)
       
       res.json(await getUsers())
   },

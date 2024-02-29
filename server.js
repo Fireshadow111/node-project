@@ -22,7 +22,7 @@ app.use(cookieParser())
 
 app.use('/products', productsRouter)
 
-app.use('/user', userRouter)
+app.use('/users', userRouter)
 
 app.listen (PORT,()=>{
     console.log(`this is listening on http://localhost:${PORT}`)
