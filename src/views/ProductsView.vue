@@ -17,13 +17,13 @@
             /> -->
           </div>
           <div class="col-md-6">
-            <h2 class="text-uppercase card-title card-title">
+            <h2 class="text-uppercase card-title card-title mt-3">
              {{ item.prod_Name }}
             </h2>
             <h4 class="card-text">
             {{ item.category}}
             </h4>
-            <a href="#" class="btn">View Product</a>
+            <router-link :to="{name: 'productview', params: {id:item.prod_ID}}"><a class="btn">View Product</a></router-link>
           </div>
         </div>
       </div>

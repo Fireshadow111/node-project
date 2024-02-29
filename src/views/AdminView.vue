@@ -30,7 +30,7 @@
     </div>
   </div>
   
-      <table class="table">
+      <table class="table mt-5">
         <tr class="thead">
           <th>id</th>
           <th>prod_name</th>
@@ -53,6 +53,46 @@
         </tbody>
       </table>
       
+
+
+
+      <input type="text" placeholder="first_Name" v-model="first_Name" required>
+    <input type="text"  placeholder="last_Name" v-model="last_Name" required>
+    <input type="number" placeholder="user_Age" v-model="user_Age" required>
+    <input type="text" placeholder="gender" v-model="gender" required>
+    <input type="text" placeholder="user_Role" v-model="user_Role" required>
+    <input type="text" placeholder="email_Add" v-model="email_Add" required>
+    <input type="text" placeholder="user_Pass" v-model="user_Pass" required>
+    <input type="text" placeholder="user_Profile" v-model="user_Profile" required>
+    <button @click="addUser()">Add Button</button>
+    <h1></h1>
+    <table class="table">
+      <tr class="thead">
+        <th>id</th>
+        <th>name</th>
+        <th>surname</th>
+        <th>age</th>
+        <th>gender</th>
+        <th>role</th>
+        <th>email</th>
+        <th>pass</th>
+        <th>profile</th>
+      </tr>
+      <tbody v-for="item in users" :key="item.id" >
+        <td>{{item.first_Name}}</td>
+        <td>{{item.last_Name}}</td>
+        <td>{{item.user_Age}}</td>
+        <td>{{item.gender}}</td>
+        <td>{{item.user_Role}}</td>
+        <td>{{item.email_Add}}</td>
+        <td>{{item.user_Pass}}</td>
+        <td>{{item.user_Profile}}</td>
+        <button @click="editUser(item.user_ID)">Edit</button>
+        <button @click="deleteUser(item.user_ID)">Delete</button>
+      </tbody>
+    </table>
+
+
     </div>
   </template>
   <script>
@@ -63,7 +103,16 @@
         quantity:null,
         amount:null,
         category:null,
-        prod_URL:null
+        prod_URL:null,
+
+        first_Name:null,
+      last_Name:null,
+      user_Age:null,
+      gender:null,
+      user_Role:null,
+      email_Add:null,
+      user_Pass:null,
+      user_Profile:null
       }
     },
     methods: {
@@ -84,7 +133,29 @@
           prod_URL:this.prod_URL
         }
         this.$store.dispatch('editProd',edit)
+      },
+
+      addUser(){
+      this.$store.dispatch('addUser',this.$data)
+    },
+    deleteUser(user_ID) {
+      this.$store.dispatch('deleteUser',user_ID)
+    },
+    editUser(user_ID){
+      let edit = {
+      id:user_ID,
+      first_Name: this.first_Name,
+      last_Name: this.last_Name,
+      user_Age: this.user_Age,
+      gender: this.gender,
+      user_Role: this.user_Role,
+      email_Add:this.email_Add,
+      user_Pass:this.user_Pass,
+      user_Profile: this.user_Profile
       }
+      this.$store.dispatch('editUser',edit)
+
+    }
     },
   
     computed: {
@@ -94,11 +165,18 @@
       getProducts(){
         return this.$store.dispatch('getProducts')
       },
+      users(){
+      return this.$store.state.users
+    },
+    getUsers(){
+     return this.$store.dispatch('getUsers')
+    },
   
       
     },
     mounted(){
       this.getProducts
+      this.getUsers
     },
     
   }

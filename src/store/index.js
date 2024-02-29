@@ -6,12 +6,17 @@ const baseUrl = 'https://node-project-1-3d99.onrender.com'
 export default createStore({
   state: {
     products: null,
+    users: null,
     loggedIn: false
   },
   getters: {},
   mutations: {
     setProducts(state, data) {
       state.products = data;
+    },
+
+    setUser(state, data) {
+      state.users = data;
     },
     setLogged(state,data){
       state.loggedIn = data
@@ -48,6 +53,34 @@ export default createStore({
       await axios.patch(baseUrl+'/products/'+update.id,update)
       window.location.reload();
     },
+
+
+
+    async getUsers({ commit }) {
+      try {
+        const {data} = await axios.get(baseUrl+'/users');
+        commit("setUser", data);
+      } catch (error) {
+        console.error('Error fetching users:', error);
+      }
+    },
+    async getUser({commit}){
+      await axios.get(baseUrl+'/users')
+    },
+    async addUser({commit},add) {
+     const {data} = await axios.post(baseUrl+'/users',add)
+     commit("setUser", data);
+     window.location.reload();
+    },
+    async deleteUser({commit},user_ID){
+       await axios.delete(baseUrl+'/users/'+user_ID)
+      window.location.reload();
+    },
+    async editUser({commit},update){
+      await axios.patch(baseUrl+'/users/'+update.id,update)
+      window.location.reload();
+    },
+
 
 
 
