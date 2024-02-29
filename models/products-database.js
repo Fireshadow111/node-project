@@ -2,7 +2,10 @@ import {pool} from '../config/config.js'
 
 const getProducts= async()=>{
     const[result] = await pool.query(`
-    SELECT * FROM products`)
+    SELECT * FROM products`);
+    if(!result || result.length === 0){
+        throw console.error();
+    }
     return result
 }
 
@@ -11,6 +14,9 @@ const getProduct= async(id)=>{
     SELECT * 
     FROM products
     WHERE prod_ID = ?`,[id])
+    if(!id || isNaN(id) || id > result){
+        throw console.error();
+    }
     return result
 }
 

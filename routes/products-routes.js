@@ -5,14 +5,14 @@ const router = express.Router();
 
 router
     .route('/')
-        .get(controller.getMany)
-        .post(controller.addProd)
+        .get(controller.getProducts)
+        .post(controller.addProduct)
         
 router
     .route('/:id')
-        .get(controller.getMan)
-        .delete(controller.deleteProd)
-        .patch(controller.editProd)
+        .get(controller.getProduct)
+        .delete(controller.deleteProduct)
+        .patch(controller.editProduct)
 
 
 

@@ -3,6 +3,9 @@ import {pool} from '../config/config.js'
 const getUsers= async()=>{
     const[result] = await pool.query(`
     SELECT * FROM users`)
+    if(!result || result.length === 0) {
+      this.error()
+    }
     return result
   }
   
@@ -11,6 +14,9 @@ const getUsers= async()=>{
     SELECT * 
     FROM users
     WHERE user_ID = ?`,[id])
+    if(!id || isNaN(id) || id > result) {
+      throw error()
+    }
     return result
   }
   

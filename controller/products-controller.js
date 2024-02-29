@@ -1,25 +1,50 @@
 import { getProducts, getProduct, addProduct , deleteProduct, editProduct} from "../models/products-database.js";
 
+
 export default{
-    getMany: async(req,res)=>{
-        res.send(await getProducts())
+    getProducts: async(req,res)=>{
+        try{
+            res.send(await getProducts())
+        } catch(error){
+            console.error('Error getting products');
+            res.status(500).json({msg: "Internal Server Error"});
+        }
+   
     },
 
-    getMan: async(req,res)=>{
-        res.send(await getProduct(+req.params.id))
+    getProduct: async(req,res)=>{
+
+        try{
+            res.send(await getProduct(+req.params.id))
+        } catch(error){
+
+            console.error('Error getting products');
+            res.status(404).json({msg: "Product not found"});
+        }
+
+       
     },
 
-    addProd: async(req,res)=>{
-        const { prod_Name, quantity, amount, category, prod_URL } = req.body;
-        await addProduct(prod_Name, quantity, amount, category, prod_URL);
-        res.send(await getProducts())
+    addProduct: async(req,res)=>{
+
+        try{
+            const { prod_Name, quantity, amount, category, prod_URL } = req.body;
+            await addProduct(prod_Name, quantity, amount, category, prod_URL);
+            res.send(await getProducts())
+
+        } catch(error){
+            console.error('Error adding product');
+            res.status(404).json({msg: "Could not add product"});
+        }
+
+      
     },
 
-    deleteProd: async(req,res)=>{
+    deleteProduct: async(req,res)=>{
         res.send(await deleteProduct(req.params.id));   
     },
 
-    editProd: async(req,res)=>{
+    editProduct: async(req,res)=>{
         const [product] = await getProduct(+req.params.id)
 
         let {prod_Name, quantity, amount, category, prod_URL} = req.body
