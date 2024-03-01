@@ -4,6 +4,14 @@
       The courses we offer:
     </h1>
   </div>
+  <div class="row mt-5 m-4">
+    <div class="col mb-3 d-flex justify-content: space-between ">
+          <input type="text" placeholder="search a product" required class="form-control w-25" data-search-product>
+          <button class="btn btn-success text-black " data-sort-product>SORT BY PRICE</button>
+        </div>
+
+      </div>
+  
   <section class="container mt-5">
     <Card  v-for="item in products" :key="item">      
       <div class="card-body">
@@ -43,6 +51,9 @@ import Card from '@/components/Card.vue'
       }
     },
   
+    methods:{
+     
+    },
     computed: {
       products(){
         return this.$store.state.products
@@ -99,7 +110,7 @@ p {
   color: #ffff;
 }
 
-/* .ml-0 {
-  left: 29%;
-} */
+.d-flex{
+  justify-content: space-between
+}
 </style>
