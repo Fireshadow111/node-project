@@ -5,7 +5,7 @@
         A brief about <span>“The Next Move Technology“</span>
       </h1>
       <section class="container mt-5">
-        <div class="card">
+        <Card class="card">
           <div class="card-body">
             <div
               class="row justify-content-center align-items-center text-center"
@@ -25,10 +25,10 @@
               </div>
             </div>
           </div>
-        </div>
+        </Card>
       </section>
       <section class="container mt-5">
-        <div class="card ml-0">
+        <Card class="card ml-0">
           <div class="card-body">
             <div
               class="row justify-content-center align-items-center text-center"
@@ -50,14 +50,20 @@
               </div>
             </div>
           </div>
-        </div>
+        </Card>
       </section>
     </div>
   </div>
 
 </template>
 
-<script></script>
+<script>
+ import Card from '@/components/Card.vue'
+    export default {
+      components: {
+      Card
+    }}
+</script>
 
 <style scoped>
 h1 {

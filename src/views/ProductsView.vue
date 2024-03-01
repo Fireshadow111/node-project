@@ -6,8 +6,8 @@
   </div>
   <div class="row mt-5 m-4">
     <div class="col mb-3 d-flex justify-content: space-between">
-          <input type="text" placeholder="Search a product" required class="form-control w-25" data-search-product>
-          <button class="btn btn-success text-black " data-sort-product>Sort by Price</button>
+          <input type="text" placeholder="Search a product" required class="form-control w-25" search-data-product>
+          <button class="btn btn-success text-black " sort-data-product @click="sortproduct">Sort by Price</button>
         </div>
 
       </div>
@@ -52,7 +52,7 @@ import Card from '@/components/Card.vue'
     },
   
     methods:{
-     
+      
     },
     computed: {
       products(){

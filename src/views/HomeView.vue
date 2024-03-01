@@ -72,6 +72,12 @@ export default {
  }
 
 
+ @media screen and (max-width: 900px){
+   h1{
+    font-size: 50px;
+   }
+ }
+
 /* Home Page Animations */
 
 @keyframes welcome{

@@ -1,6 +1,6 @@
 /* eslint-disable */
 <template>
-      <div>
+      <div class="container-fluid">
         <div class="row mt-5 m-4">
     <div class="col mb-3 d-flex justify-content: space-between ">
           <input type="text" placeholder="search a product" required class="form-control w-25" data-search-product>
@@ -60,7 +60,7 @@
     </div>
   </div>
   
-      <table class=" table table-responsive mt-5 ">
+      <table class=" table table-responsive mt-5 m-5 container-fluid">
         <tr class="thead">
           <th>id</th>
           <th>Product Name</th>
@@ -145,7 +145,7 @@
      
     
     
-    <table class=" table table-responsive">
+    <table class=" table table-responsive m-5 container-fluid">
       <tr class="thead">
         <th>id</th>
         <th>Name</th>
@@ -270,7 +270,7 @@
     border-collapse: collapse;
     margin-top: 20px;
     align-content: center;
-    margin: 2.3rem;
+    /* margin: 2.3rem; */
     
   }
   
@@ -321,5 +321,10 @@
   .d-flex{
   justify-content: space-between
 }
+
+@media screen and (max-width: 900px){
+  
+ }
     
+
   </style>

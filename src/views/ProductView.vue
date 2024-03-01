@@ -1,6 +1,6 @@
 <template>
     <section class="container mt-5">
-      <div class="card ml-0 mt-5"  v-for="item in product" :key="item.prod_ID">
+      <Card class="card ml-0 mt-5"  v-for="item in product" :key="item.prod_ID">
         <div class="card-body">
           <div class="row justify-content-center align-items-center text-center">
             <div class="md-6"><img :src="item.prod_URL" class="img-fluid w-50 mt-5">
@@ -24,13 +24,17 @@
             </div>
           </div>
         </div>
-      </div>
+      </Card>
 
     </section>
   </template>
   
   <script>
+  import Card from '@/components/Card.vue'
     export default {
+      components: {
+      Card
+    },
       data(){
         return{
           prod_Name: null,

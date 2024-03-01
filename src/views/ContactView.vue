@@ -2,7 +2,7 @@
     <div class="row container m-3">
      <div class="col display-1 "><h1>HERE IS HOW YOU CAN REACH US</h1>
     </div>
-     <div class="col mt-5 d-flex justify-content-end"> <form action="https://formspree.io/f/xleqnzdj" method="POST" class="w-50">
+     <div class="col-6 mt-5 d-flex justify-content-end"> <form action="https://formspree.io/f/xleqnzdj" method="POST" class="w-50">
 
 <div class="col">
 
