@@ -38,5 +38,11 @@ export default {
 }
 </script>
   
-<style ></style>
+<style scoped>
+ @media screen and (max-width: 900px){
+  .table{
+    width: fit-content;
+  }
+ }
+</style>
   
