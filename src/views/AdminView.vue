@@ -322,9 +322,72 @@
   justify-content: space-between
 }
 
-@media screen and (max-width: 900px){
-  
- }
-    
+@media screen and (max-width: 1080px) {
+    .container-fluid {
+      padding: 0 15px; 
+    }
+
+    .table {
+      width: 100%;
+    }
+
+    .d-flex {
+      flex-direction: column;
+    }
+
+    #add {
+      margin-left: 0; 
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    .container-fluid {
+      padding: 0 10px; 
+    }
+
+    .table {
+      width: 100%;
+    }
+
+    .d-flex {
+      flex-direction: column;
+    }
+
+    #add {
+      margin-left: 0; 
+    }
+
+    .modal-dialog {
+      max-width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 300px) {
+    .container-fluid {
+      padding: 0 5px; 
+    }
+
+    .table {
+      width: 100%;
+    }
+
+    .d-flex {
+      flex-direction: column;
+    }
+
+    #add {
+      margin-left: 0; 
+    }
+
+    .modal-dialog {
+      max-width: 100%;
+    }
+
+    .modal-body input {
+      width: 100%;
+    }
+
+  }
+
 
   </style>
