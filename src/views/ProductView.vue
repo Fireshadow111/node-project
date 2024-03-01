@@ -86,8 +86,13 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
       0 6px 20px 0 rgba(255, 255, 255, 0.19);
     width: 55%;
+
+    transition: transform 0.3s;
   }
   
+  .card:hover{
+  transform:scale(105%)
+}
   .container{
     display: grid;
       align-content: center;
@@ -105,6 +110,11 @@
     border-color: #3a8541;
     color: #ffff;
   }
+
+  .btn:hover{
+  border-color: white;
+  color:#3a8541;
+}
   
   /* .ml-0 {
     left: 29%;
