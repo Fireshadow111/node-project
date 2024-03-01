@@ -5,16 +5,10 @@
     </h1>
   </div>
   <section class="container mt-5">
-    <div class="card ml-0 mt-5"  v-for="item in products" :key="item">
+    <Card  v-for="item in products" :key="item">      
       <div class="card-body">
         <div class="row justify-content-center align-items-center text-center">
           <div class="col-md-6"><img :src="item.prod_URL" class="img-fluid">
-            <!-- <img
-              src="https://i.ibb.co/QNW9Hj1/634970c7cbeed5644711b937-62fd57ccd6890f25796f92f9-Adobe-Stock-295461823-removebg-preview.png"
-              alt="Code-Image"
-              loading="lazy"
-              class="img-fluid"
-            /> -->
           </div>
           <div class="col-md-6">
             <h2 class="text-uppercase card-title card-title mt-3">
@@ -27,12 +21,18 @@
           </div>
         </div>
       </div>
-    </div>
+    </Card>
+    <!-- <div class="card ml-0 mt-5"  v-for="item in products" :key="item">
+    </div> -->
   </section>
 </template>
 
 <script>
+import Card from '@/components/Card.vue'
   export default {
+    components: {
+      Card
+    },
     data(){
       return{
         prod_Name: null,

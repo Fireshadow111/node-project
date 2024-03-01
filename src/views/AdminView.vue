@@ -33,9 +33,9 @@
   <div class="modal fade" id="editProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header d-block">
           <h1 class="modal-title fs-5 text-black" id="exampleModalLabel">Edit a product</h1>
-          <p>Specify what you want to edit , close the modal and press edit button after that.</p>
+          <p class="text-black">Specify what you want to edit , close the modal and press edit button after that.</p>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -52,7 +52,7 @@
     </div>
   </div>
   
-      <table class="table mt-5">
+      <table class=" table table-responsive mt-5 ">
         <tr class="thead">
           <th>id</th>
           <th>prod_name</th>
@@ -85,8 +85,9 @@
   <div class="modal fade" id="addNewUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header d-block">
           <h1 class="modal-title fs-5 text-black" id="exampleModalLabel">Add a new user</h1>
+          <p class="text-black">Specify what you want to edit , close the modal and press edit button after that.</p>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -136,7 +137,7 @@
      
     
     
-    <table class="table">
+    <table class=" table table-responsive">
       <tr class="thead">
         <th>id</th>
         <th>name</th>
@@ -147,8 +148,10 @@
         <th>email</th>
         <th>pass</th>
         <th>profile</th>
+        <th>Action</th>
       </tr>
       <tbody v-for="item in users" :key="item.id" >
+        <td>{{item.user_ID}}</td>
         <td>{{item.first_Name}}</td>
         <td>{{item.last_Name}}</td>
         <td>{{item.user_Age}}</td>
@@ -157,9 +160,10 @@
         <td>{{item.email_Add}}</td>
         <td>{{item.user_Pass}}</td>
         <td>{{item.user_Profile}}</td>
-        <a  id="edit"  data-bs-toggle="modal" data-bs-target="#editUser" class="btn btn-outline-success">Edit User Form</a>
+        <td><a  id="edit"  data-bs-toggle="modal" data-bs-target="#editUser" class="btn btn-outline-success">Edit User Form</a>
         <a @click="editUser(item.user_ID)" id="edit" class="btn btn-outline-success">Edit</a>
-        <a @click="deleteUser(item.user_ID)" id="delete" class="btn btn-outline-danger">Delete</a>
+        <a @click="deleteUser(item.user_ID)" id="delete" class="btn btn-outline-danger">Delete</a></td>
+        
       </tbody>
     </table>
 
