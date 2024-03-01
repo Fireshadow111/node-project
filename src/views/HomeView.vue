@@ -40,6 +40,22 @@ export default {
  h1,h6,a{
   /* margin-left:2.3rem; */
   font-weight: 650;
+
+  background-color: none;
+  animation-name: welcome;
+  animation-duration: 18s;
+  animation-delay: 0s;
+  position: relative;
+  animation-direction: alternate;
+ }
+
+ img{
+  background-color: none;
+  animation-name: image;
+  animation-duration: 18s;
+  animation-delay: 0s;
+  position: relative;
+  animation-direction: alternate;
  }
  
 
@@ -54,6 +70,75 @@ export default {
  .btn:hover{
   box-shadow: 0px 5px 20px 0px #3A8541, 0 10px 30px 0 #3A8541;
  }
+
+
+/* Home Page Animations */
+
+@keyframes welcome{
+  0%{
+      left: -800px;
+      top: 0px;
+  }
+
+  25%{
+      left: 0px;
+      top: 0px;
+
+  }
+
+  50%{
+      left: 0px;
+     top:0px;
+
+  }
+
+  75%{
+      top: 0px;
+      left: 0px 
+   }
+
+   100%{
+      left: 0px;
+      top: 0px;
+  }
+
+}  
+
+
+@keyframes image{
+  0%{
+      left: 800px;
+      top: 0px;
+  }
+
+  25%{
+      left: 0px;
+      top: 0px;
+
+  }
+
+  50%{
+      left: 0px;
+     top:0px;
+
+  }
+
+  75%{
+      top: 0px;
+      left: 0px 
+   }
+
+   100%{
+      left: 0px;
+      top: 0px;
+  }
+
+
+
+
+  
+}  
+
 
 
 </style>

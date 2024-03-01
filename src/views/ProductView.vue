@@ -20,7 +20,7 @@
               </h4>
               <h5>{{ item.amount }}</h5>
               <router-link :to="{name: 'products', params: {id:item.prod_ID}}"><a class="btn">Go back to Products</a></router-link>
-              <a class="btn ">Purchase</a>
+              <a class="btn " @click="purchaseClicked">Purchase</a>
             </div>
           </div>
         </div>
@@ -40,6 +40,13 @@
           prod_URL:null
         }
       },
+
+      methods: {
+    purchaseClicked() {
+ 
+      alert('Thank you for your purchase!'); 
+    },
+  },
     
       computed: {
         product(){

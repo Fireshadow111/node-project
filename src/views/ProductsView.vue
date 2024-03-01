@@ -5,9 +5,9 @@
     </h1>
   </div>
   <div class="row mt-5 m-4">
-    <div class="col mb-3 d-flex justify-content: space-between ">
-          <input type="text" placeholder="search a product" required class="form-control w-25" data-search-product>
-          <button class="btn btn-success text-black " data-sort-product>SORT BY PRICE</button>
+    <div class="col mb-3 d-flex justify-content: space-between">
+          <input type="text" placeholder="Search a product" required class="form-control w-25" data-search-product>
+          <button class="btn btn-success text-black " data-sort-product>Sort by Price</button>
         </div>
 
       </div>
@@ -25,7 +25,7 @@
             <h4 class="card-text">
             {{ item.category}}
             </h4>
-            <router-link :to="{name: 'productview', params: {id:item.prod_ID}}"><a class="btn">View Product</a></router-link>
+            <router-link :to="{name: 'productview', params: {id:item.prod_ID}}"><a class="btn">View Course</a></router-link>
           </div>
         </div>
       </div>
@@ -90,8 +90,13 @@ import Card from '@/components/Card.vue'
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
     0 6px 20px 0 rgba(255, 255, 255, 0.19);
   width: 75%;
+
+  transition: transform 0.3s;
 }
 
+.card:hover{
+  transform:scale(105%)
+}
 .container{
   display: grid;
     align-content: center;
@@ -108,6 +113,11 @@ p {
 .btn {
   border-color: #3a8541;
   color: #ffff;
+}
+
+.btn:hover{
+  border-color: white;
+  color:#3a8541;
 }
 
 .d-flex{

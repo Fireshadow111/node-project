@@ -55,4 +55,48 @@ h1{
 
 
 
+/* Media Queries */
+@media (max-width: 1080px){
+  h1 {
+    font-size: 90px;
+    margin-top: 53px;
+    color: #3A8541;
+    text-shadow: 2px 1px 5px greenyellow white;
+}
+
+.container {
+    max-width: 1080px;
+}
+
+.form-control {
+    width: 100%;
+}
+
+}
+
+@media (max-width: 720px) {
+  h1 {
+    font-size: 60px; 
+    margin-top: 30px; 
+    color: #3A8541;
+    text-shadow: 2px 1px 3px greenyellow white; 
+}
+
+.container {
+    max-width: 720px; 
+    margin: 0 auto; 
+}
+
+.form-control {
+    width: 100%;
+}
+
+}
+
+
+
+
+
+ 
+
 </style>

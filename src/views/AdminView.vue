@@ -63,11 +63,11 @@
       <table class=" table table-responsive mt-5 ">
         <tr class="thead">
           <th>id</th>
-          <th>prod_name</th>
+          <th>Product Name</th>
           <!-- <th>quantity</th> -->
-          <th>amount</th>
-          <th>category</th>
-          <th>ProdURL</th>
+          <th>Amount</th>
+          <th>Category</th>
+          <th>Image</th>
           <th>Action</th>
         </tr>
         <tbody v-for="item in products" :key="item.id" class="mt-3">
@@ -148,14 +148,14 @@
     <table class=" table table-responsive">
       <tr class="thead">
         <th>id</th>
-        <th>name</th>
-        <th>surname</th>
-        <th>age</th>
-        <th>gender</th>
-        <th>role</th>
-        <th>email</th>
-        <th>pass</th>
-        <th>profile</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Role</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Profile</th>
         <th>Action</th>
       </tr>
       <tbody v-for="item in users" :key="item.id" >

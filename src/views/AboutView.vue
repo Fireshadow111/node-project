@@ -71,10 +71,19 @@ span {
 .card {
   background: inherit;
   color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 #3a8541;
+ 
   width: 65%;
   justify-content: center;
+
+
+  border-radius: 50px;
+  border: 3px solid #44d62c;
+  transition: transform 0.3s;
+  box-shadow: 0px 0px 15px 4px
+}
+
+.card:hover{
+  transform:scale(105%)
 }
 
 /* .card-body{
