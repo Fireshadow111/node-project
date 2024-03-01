@@ -1,8 +1,16 @@
 /* eslint-disable */
 <template>
       <div>
-       <!-- Button trigger modal -->
-       
+        <div class="row mt-5 m-4">
+    <div class="col mb-3 d-flex justify-content: space-between ">
+          <input type="text" placeholder="search a product" required class="form-control w-25" data-search-product>
+          <button class="btn btn-success text-black " data-sort-product>SORT BY PRICE</button>
+        </div>
+
+      </div>
+
+
+       <!-- Button trigger modal -->  
   <button type="button" class="btn btn-primary mt-5" id="add" data-bs-toggle="modal" data-bs-target="#addNewProduct">
     Add Product
   </button>
@@ -309,5 +317,9 @@
     margin-left: 2.5rem;
     display: grid;
   }
+
+  .d-flex{
+  justify-content: space-between
+}
     
   </style>

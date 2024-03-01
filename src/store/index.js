@@ -1,6 +1,6 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
-import sweet from 'sweetalert'
+// import sweet from 'sweetalert'
 
 const baseUrl = 'https://node-project-1-3d99.onrender.com'
 /* eslint-disable */
@@ -39,22 +39,14 @@ export default createStore({
     },
 
     async getProduct({commit},prod_ID){
-      try{
       const {data} = await axios.get(baseUrl+'/products/'+prod_ID)
       commit("setProduct", data);
-      }catch(error){
-        console.error('Error fetching products:', error);
-      }
     },
 
     async addProduct({commit},add) {
-      try{
      const {data} = await axios.post(baseUrl+'/products',add)
      commit("setProducts", data);
      window.location.reload();
-      }catch(error){
-        console.error('Error adding products:', error);
-      }
      
     },
 
