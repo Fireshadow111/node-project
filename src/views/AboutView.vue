@@ -74,6 +74,7 @@ span {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
     0 6px 20px 0 #3a8541;
   width: 65%;
+  justify-content: center;
 }
 
 /* .card-body{
@@ -84,9 +85,10 @@ span {
   max-width: 50%;
 }
 
-.ml-0{
-margin-left: 40%;
+.container{
+  display: grid;
+    align-content: center;
+    justify-items: center;
 }
-
 
 </style>
