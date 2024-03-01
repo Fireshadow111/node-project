@@ -12,7 +12,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <h1 class="modal-title fs-5 text-black" id="exampleModalLabel">Add a new product</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -25,6 +25,28 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
           <a @click="addProduct()" class="btn btn-success">Add</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal , only what to edit and close then press the button after-->
+  <div class="modal fade" id="editProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 text-black" id="exampleModalLabel">Edit a product</h1>
+          <p>Specify what you want to edit , close the modal and press edit button after that.</p>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" placeholder="prod_Name" class="form-control my-2" v-model="prod_Name" required>
+          <input type="number" placeholder="quantity" class="form-control my-2" v-model="quantity" required>
+          <input type="number"  placeholder="amount" class="form-control my-2" v-model="amount" required>
+          <input type="text" placeholder="category" class="form-control my-2" v-model="category" required>
+          <input type="text" placeholder="prod_URL" class="form-control my-2" v-model="prod_URL" required>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -47,25 +69,73 @@
           <td>{{item.amount}}</td>
           <td>{{item.category}}</td>
           <td><img :src="item.prod_URL"></td>
-          <td><a @click="editProd(item.prod_ID)" id="edit" class="btn btn-outline-success">Edit</a>
+          <td><a data-bs-toggle="modal" data-bs-target="#editProduct" id="edit" class="btn btn-outline-success">Edit form</a>
+          <a @click="editProd(item.prod_ID)" id="edit" class="btn btn-outline-success">Edit</a>
           <a @click="deleteProd(item.prod_ID)" id="delete" class="btn btn-outline-danger">Delete</a></td>
           
         </tbody>
       </table>
-      
+
+
+      <button type="button" class="btn btn-primary mt-5" id="add" data-bs-toggle="modal" data-bs-target="#addNewUser">
+    Add User
+  </button>
+
+  <!-- Modal for user -->
+  <div class="modal fade" id="addNewUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 text-black" id="exampleModalLabel">Add a new user</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" placeholder="first_Name" class="form-control my-2" v-model="first_Name" required>
+    <input type="text"  placeholder="last_Name" class="form-control my-2" v-model="last_Name" required>
+    <input type="number" placeholder="user_Age" class="form-control my-2" v-model="user_Age" required>
+    <input type="text" placeholder="gender" class="form-control my-2" v-model="gender" required>
+    <input type="text" placeholder="user_Role" class="form-control my-2" v-model="user_Role" required>
+    <input type="text" placeholder="email_Add" class="form-control my-2" v-model="email_Add" required>
+    <input type="text" placeholder="user_Pass" class="form-control my-2" v-model="user_Pass" required>
+    <input type="text" placeholder="user_Profile" class="form-control my-2" v-model="user_Profile" required>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          <a @click="addUser()" class="btn btn-primary">Add Button</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal for user -->
+  <div class="modal fade" id="editUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 text-black" id="exampleModalLabel">Edit form</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" placeholder="first_Name" class="form-control my-2" v-model="first_Name" required>
+    <input type="text"  placeholder="last_Name" class="form-control my-2" v-model="last_Name" required>
+    <input type="number" placeholder="user_Age" class="form-control my-2" v-model="user_Age" required>
+    <input type="text" placeholder="gender" class="form-control my-2" v-model="gender" required>
+    <input type="text" placeholder="user_Role" class="form-control my-2" v-model="user_Role" required>
+    <input type="text" placeholder="email_Add" class="form-control my-2" v-model="email_Add" required>
+    <input type="text" placeholder="user_Pass" class="form-control my-2" v-model="user_Pass" required>
+    <input type="text" placeholder="user_Profile" class="form-control my-2" v-model="user_Profile" required>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
-      <input type="text" placeholder="first_Name" v-model="first_Name" required>
-    <input type="text"  placeholder="last_Name" v-model="last_Name" required>
-    <input type="number" placeholder="user_Age" v-model="user_Age" required>
-    <input type="text" placeholder="gender" v-model="gender" required>
-    <input type="text" placeholder="user_Role" v-model="user_Role" required>
-    <input type="text" placeholder="email_Add" v-model="email_Add" required>
-    <input type="text" placeholder="user_Pass" v-model="user_Pass" required>
-    <input type="text" placeholder="user_Profile" v-model="user_Profile" required>
-    <button @click="addUser()">Add Button</button>
-    <h1></h1>
+     
+    
+    
     <table class="table">
       <tr class="thead">
         <th>id</th>
@@ -87,8 +157,9 @@
         <td>{{item.email_Add}}</td>
         <td>{{item.user_Pass}}</td>
         <td>{{item.user_Profile}}</td>
-        <button @click="editUser(item.user_ID)">Edit</button>
-        <button @click="deleteUser(item.user_ID)">Delete</button>
+        <a  id="edit"  data-bs-toggle="modal" data-bs-target="#editUser" class="btn btn-outline-success">Edit User Form</a>
+        <a @click="editUser(item.user_ID)" id="edit" class="btn btn-outline-success">Edit</a>
+        <a @click="deleteUser(item.user_ID)" id="delete" class="btn btn-outline-danger">Delete</a>
       </tbody>
     </table>
 

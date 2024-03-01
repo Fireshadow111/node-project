@@ -3,7 +3,7 @@
       <div class="card ml-0 mt-5"  v-for="item in product" :key="item.prod_ID">
         <div class="card-body">
           <div class="row justify-content-center align-items-center text-center">
-            <div class="col-md-6"><img :src="item.prod_URL" class="img-fluid">
+            <div class="md-6"><img :src="item.prod_URL" class="img-fluid w-50 mt-5">
               <!-- <img
                 src="https://i.ibb.co/QNW9Hj1/634970c7cbeed5644711b937-62fd57ccd6890f25796f92f9-Adobe-Stock-295461823-removebg-preview.png"
                 alt="Code-Image"
@@ -11,18 +11,21 @@
                 class="img-fluid"
               /> -->
             </div>
-            <div class="col-md-6">
-              <h2 class="text-uppercase card-title card-title mt-3">
+            <div class="md-6 ">
+              <h2 class="text-uppercase card-title card-title mt-5">
                {{ item.prod_Name }}
               </h2>
               <h4 class="card-text">
               {{ item.category}}
               </h4>
-           <!-- <router-link :to="{name: 'product', params: {id: product.prod_ID}}"><a class="btn">View Product</a></router-link> -->
+              <h5>{{ item.amount }}</h5>
+              <router-link :to="{name: 'products', params: {id:item.prod_ID}}"><a class="btn">Go back to Products</a></router-link>
+              <a class="btn ">Purchase</a>
             </div>
           </div>
         </div>
       </div>
+
     </section>
   </template>
   
@@ -75,7 +78,7 @@
     color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
       0 6px 20px 0 rgba(255, 255, 255, 0.19);
-    width: 75%;
+    width: 55%;
   }
   
   .container{
